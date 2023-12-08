@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>短縮リンク</title>
+        <meta name="theme-color" content="#008204">
+
+        <link rel="stylesheet" href="./ress.min.css">
+        <!-- v4.0.0 https://unpkg.com/ress/dist/ress.min.css https://github.com/filipelinhares/ress -->
+        <!-- リセットCSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="text-green">短縮URL</h1>
+        <div>
+            <input type="url" id="from-text" placeholder="短縮したいURL" class="background-grey" required>
+        </div>
+        <div>
+            <div>
+                <input type="checkbox" id="show-custom" class="nocheckbox"><label for="show-custom"><img src="./img/add_black_24dp.svg" id="show-custom-icon" class="material-icons-fixed"> カスタムリンク</label>
+            </div>
+            <input type="text" id="custom-text" placeholder="32文字以内 英数字,一部記号のみ" class="background-grey hidden">
+        </div>
+        <div>
+            <div><a href="bundle.html" class="text-sora">複数リンクをまとめて短縮</a></div>
+            <button type="button" id="send-btn" class="btn">作成</button>
+            <p id="p-1"></p>
+            <p id="show-url"></p>
+            <p id="notice"></p>
+        </div>
+        <input type="checkbox" id="show-option" class="nocheckbox"><label for="show-option"><img src="./img/add_black_24dp.svg" id="show-option-icon" class="material-icons-fixed"> オプションを表示</label>
+        <div class="option hidden" id="option">
+            <h3 class="text-green">オプション</h3>
+            <form class="column">
+                <div><input type="checkbox" value="クイック作成" id="quick"><label for="quick">クイック作成</label></div>
+                <div><input type="checkbox" value="自動コピー" id="auto-copy"><label for="auto-copy">自動コピー</label></div>
+                <div><p>通知:</p>
+                    <select name="notice-type" class="notice-type" id="notify-select">
+                    <option value="on">オン</option>
+                    <option value="off">オフ</option>
+                    <option value="error">エラー/お知らせ</option>
+                </select></div>
+            </form>
+        </div>
+
+        <script type="module" src="popup.js"></script>
+        <!-- htmlの後にjs読み込まないとDOMでエラー出る -->
+    </body>
+</html>

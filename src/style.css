@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+/* カスタムフォント */
+
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 15px;
+    margin-top: 8px;
+}
+.option{
+    margin: 5px;
+}
+.text-green{
+    color: green;
+}
+.text-sora{
+    color: #009fbd;
+}
+a.text-sora{
+    text-decoration: none;
+}
+a:hover.text-sora{
+    color: #008ca6;
+}
+.background-grey{
+    background: rgba(0, 0, 0, 0.137);
+    margin-top: 10px;
+}
+.btn{
+    font-size: 0.8rem;
+    background: #0bd;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 5px;
+    border-radius: 3px;
+    padding: 3px 16px;
+}
+.hidden{
+    display: none;
+    /* 非表示(表示されない部分はそのためのスペースが開かない) */
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.notice-type{
+    background: rgba(0, 0, 0, 0.137);
+    font-size: 0.8rem;
+}
+.material-icons-fixed{
+    display: inline-flex;
+    vertical-align: middle;
+    /* アイコンが上にズレるので修正かける */
+}
+input[type="checkbox"].nocheckbox {
+    display: none;
+}
+.tab-select {
+    width: 100%; /* 省略せずに表示するサイズを指定 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    appearance: auto;
+}

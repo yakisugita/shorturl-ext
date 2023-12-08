@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>まとめて短縮</title>
+    <meta name="theme-color" content="#008204">
+    
+    <link rel="stylesheet" href="./ress.min.css">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1 class="text-green">まとめて短縮</h1>
+    <ul id="list" class="list-none">
+        <li>1~5個のURLをまとめて短縮できます</li>
+        <li><input type="url" id="from-text-1" placeholder="URL1" class="background-grey"></li>
+        <li><input type="url" id="from-text-2" placeholder="URL2" class="background-grey"></li>
+        <li><input type="url" id="from-text-3" placeholder="URL3" class="background-grey"></li>
+        <li><input type="url" id="from-text-4" placeholder="URL4" class="background-grey"></li>
+        <li><input type="url" id="from-text-5" placeholder="URL5" class="background-grey"></li>
+        <li>
+            <select class="notice-type tab-select background-grey" id="tab-select">
+                <option value="tab-select-default" id="tab-select-default" selected disabled>タブを選択して追加</option>
+                <optgroup label="固定タブ:" id="optgroup-pinned">
+                </optgroup>
+            </select>
+        </li>
+    </ul>
+    <button type="button" id="send-btn" class="btn b-small">作成</button>
+    <p id="p-1"></p>
+    <p id="show-url"></p>
+    <p id="notice"></p>
+
+    <div>
+        <input type="checkbox" id="show-custom" class="nocheckbox"><label for="show-custom"><img src="./img/add_black_24dp.svg" id="show-custom-icon" class="material-icons-fixed"> カスタムリンク</label>
+    </div>
+    <input type="text" id="custom-text" placeholder="32文字以内 英数字,一部記号のみ" class="background-grey hidden">
+
+    <script type="module" src="bundle.js"></script>
+    <!-- htmlの後にjs読み込まないとDOMでエラー出る -->
+</body>
+</html>
