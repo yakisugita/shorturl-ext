@@ -20,16 +20,25 @@
 <body>
     <h1 class="text-green">まとめて短縮</h1>
     <ul id="list" class="list-none">
-        <li>1~5個のURLをまとめて短縮できます</li>
+        <li>10個までのURLをまとめて短縮できます</li>
         <li><input type="url" id="from-text-1" placeholder="URL1" class="background-grey"></li>
         <li><input type="url" id="from-text-2" placeholder="URL2" class="background-grey"></li>
         <li><input type="url" id="from-text-3" placeholder="URL3" class="background-grey"></li>
         <li><input type="url" id="from-text-4" placeholder="URL4" class="background-grey"></li>
         <li><input type="url" id="from-text-5" placeholder="URL5" class="background-grey"></li>
+        <li><input type="url" id="from-text-6" placeholder="URL6" class="background-grey"></li>
+        <li><input type="url" id="from-text-7" placeholder="URL7" class="background-grey"></li>
+        <li><input type="url" id="from-text-8" placeholder="URL8" class="background-grey"></li>
+        <li><input type="url" id="from-text-9" placeholder="URL9" class="background-grey"></li>
+        <li><input type="url" id="from-text-10" placeholder="URL10" class="background-grey"></li>
         <li>
             <select class="notice-type tab-select background-grey" id="tab-select">
                 <option value="tab-select-default" id="tab-select-default" selected disabled>タブを選択して追加</option>
                 <optgroup label="固定タブ:" id="optgroup-pinned">
+                </optgroup>
+                <optgroup label="同じウィンドウのタブ:" id="optgroup-window">
+                </optgroup>
+                <optgroup label="他タブ:" id="optgroup-others">
                 </optgroup>
             </select>
         </li>
