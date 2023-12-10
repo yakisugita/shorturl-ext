@@ -1,8 +1,8 @@
 {
-    "name": "短縮リンク作成 for Firefox",
-    "version": "1.2.1",
+    "name": "短縮リンク作成",
+    "version": "2.0",
     "manifest_version": 3,
-    "description": "短縮リンクを簡単に作成できます。カスタムリンクも使用可能。",
+    "description": "自作短縮リンクのFirefoxアドオン 複数のURLをまとめて短縮できます",
     "icons": {
         "48": "icon3.png"
     },
@@ -22,11 +22,10 @@
         },
         "default_popup": "popup.html"
     },
-    "homepage_url": "https://twitter.com/_yakisugita_",
+    "homepage_url": "https://8jsv.com/",
     "browser_specific_settings": {
         "gecko": {
-          "id": "{e224f9a5-49c0-479c-beb5-599757160ff8}",
-          "strict_min_version": "42.0"
+          "id": "{e224f9a5-49c0-479c-beb5-599757160ff8}"
         }
       }
 }
