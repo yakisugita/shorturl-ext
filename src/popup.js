@@ -103,6 +103,6 @@ function url_ajax(from_url, custom) {
         document.getElementById("p-1").innerText = "http(s) urlを入力してください!"
     }
     else {
-        request({from1: from_url, custom: custom, bundle:false, context:false})
+        request({urls: [from_url], custom: custom, context:false})
     }
 }

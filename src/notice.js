@@ -10,7 +10,7 @@ export function notice(message, err) {
                     iconUrl: "./icon3.png",
                     title: "短縮リンク作成",
                     message: message,
-                    contextMessage: "エラー/お知らせ",
+                    contextMessage: "エラー",
                     type: "basic"
                 })
             }

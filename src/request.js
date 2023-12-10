@@ -1,12 +1,6 @@
 import { notice } from "./notice.js"
 export async function request(object) {
     // fetch APIでデータ送信
-    const method = "POST"
-    const headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-    }
-    // 新バージョンテスト
     if (object["urls"] && Array.isArray(object["urls"])) {
         console.log(object["urls"])
         const urls = object["urls"]
@@ -21,9 +15,13 @@ export async function request(object) {
 
         const init = { method:'POST', headers:headers2, body:body_json}
 
-        const response = await fetch('https://api.8jsv.com/', init)
+        if (!object["context"]) {
+            document.getElementById("p-1").innerText = "作成中.."
+        }
+
+        await fetch('https://api.8jsv.com/', init)
         .then((response) => {
-            console.log(`status : ${response.status}, text : ${response.statusText}`)
+            console.log(`status : ${response.status}`)
             let error_text
             switch (response.status) {
                 case 200:
@@ -60,7 +58,6 @@ export async function request(object) {
             console.log("catch data",data)
 
             try {
-                console.log(data)
                 if (data.err_msg == "") {
                     if (data.id === undefined) {
                         // ID取得できなかったら
@@ -127,8 +124,6 @@ export async function request(object) {
                 document.getElementById("p-1").innerText = `エラーが発生しました\n${toString(error)}`
             }
         });
-
-        console.log("response:",response)
 
     } else {
         console.error("no urls")
