@@ -63,14 +63,15 @@ document.getElementById("show-custom").addEventListener("click", show_custom)
 
 function click_create() {
     request({
-        from1:document.getElementById("from-text-1").value,
-        from2:document.getElementById("from-text-2").value,
-        from3:document.getElementById("from-text-3").value,
-        from4:document.getElementById("from-text-4").value,
-        from5:document.getElementById("from-text-5").value,
         custom:document.getElementById("custom-text").value,
-        bundle:true,
-        context:false
+        context:false,
+        urls:[
+            document.getElementById("from-text-1").value,
+            document.getElementById("from-text-2").value,
+            document.getElementById("from-text-3").value,
+            document.getElementById("from-text-4").value,
+            document.getElementById("from-text-5").value,
+        ]
     });
 }
 document.getElementById("send-btn").addEventListener("click", click_create)
