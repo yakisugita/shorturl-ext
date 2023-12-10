@@ -1,4 +1,4 @@
-import { request } from "./request.js"
+import { request, fade } from "./request.js"
 // storageAPIを使って取得
 chrome.storage.local.get(["quick", "auto_copy", "notice_type"], function (items) {
     // クイック取得がONなら
@@ -101,6 +101,7 @@ function url_ajax(from_url, custom) {
     if (from_url == "") {
         // 入力した値のチェック(空じゃないか・http:// か https:// から始まるかどうか)
         document.getElementById("p-1").innerText = "http(s) urlを入力してください!"
+        fade("p-1", "error")
     }
     else {
         request({urls: [from_url], custom: custom, context:false})

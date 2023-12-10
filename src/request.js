@@ -49,6 +49,7 @@ export async function request(object) {
                     notice(error_text, true)
                 } else {
                     document.getElementById("p-1").innerText = error_text
+                    fade("p-1", "error")
                 }
             }
             return response.json()
@@ -62,6 +63,7 @@ export async function request(object) {
                     if (data.id === undefined) {
                         // ID取得できなかったら
                         document.getElementById("p-1").innerText = "失敗しました 再度お試しください"
+                        fade("p-1", "error")
                     } else {
                         // 正常に作られたら
                         if (object["context"]) {
@@ -85,6 +87,7 @@ export async function request(object) {
                                 })
                         } else {
                             document.getElementById("p-1").innerText = "生成されたURL:"
+                            fade("p-1", "success")
                             document.getElementById("show-url").innerText = `https://8jsv.com/${data.id}`
 
                             // storageAPIを使って取得
@@ -95,9 +98,11 @@ export async function request(object) {
                                     navigator.clipboard.writeText(copy_url)
                                         .then(() => {
                                             document.getElementById("p-1").innerText = "生成されたURL(コピー済):"
+                                            fade("p-1", "success")
                                         }).catch(error => {
                                             /* clipboard write failed */
                                             document.getElementById("p-1").innerText = "コピー処理に失敗しました"
+                                            fade("p-1", "error")
                                         })
                                 }
                             })
@@ -111,21 +116,31 @@ export async function request(object) {
                     notice(`データ処理中にエラーが発生しました\n${error}`, true)
                 } else {
                     document.getElementById("p-1").innerText = "データ処理中にエラーが発生しました"
+                    fade("p-1", "error")
                 }
             }
             return
         })
         .catch((error) => {
-            console.log(e.message)
+            console.log(error.message)
 
             if (object["context"]) {
-                notice(`エラーが発生しました\n${toString(error)}`, true)
+                notice(`エラーが発生しました\n${error.message}`, true)
             } else {
-                document.getElementById("p-1").innerText = `エラーが発生しました\n${toString(error)}`
+                document.getElementById("p-1").innerText = `エラーが発生しました\n${error.message}`
+                fade("p-1", "error")
             }
         });
 
     } else {
         console.error("no urls")
     }
+}
+
+export function fade(elementId, className) {
+    const element = document.getElementById(elementId)
+    element.classList.add(...[className, "bg_fade"])
+    setTimeout(() => {
+        element.classList.remove(...["error","success","bg_fade"])
+    }, 880);
 }

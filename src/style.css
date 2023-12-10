@@ -62,3 +62,21 @@ input[type="checkbox"].nocheckbox {
     text-overflow: ellipsis;
     appearance: auto;
 }
+
+.error {
+    background-color: #ff5959;
+}
+.success {
+    background-color: #76db9d;
+}
+.bg_fade {
+    animation-delay: 0.3s;
+    animation-duration: 0.6s;
+    animation-name: bg_fade;
+}
+
+@keyframes bg_fade {
+    to {
+        background-color: #FFFFFF;
+    }
+}

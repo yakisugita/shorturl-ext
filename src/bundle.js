@@ -1,4 +1,4 @@
-import { request } from "./request.js"
+import { request, fade } from "./request.js"
 // selectに開いてるタブのタイトル・URLを追加していく
 chrome.tabs.query({}, (tabs) => {
     // 今のwindowIDを取得
@@ -48,6 +48,7 @@ function select_tab () {
             }
             if (i == 9) {
                 document.getElementById("p-1").innerText = "エラー:入力ボックスに空きがありません"
+                fade("p-1", "error")
             }
         }
         // selectの表示を戻す
