@@ -1,8 +1,8 @@
 {
     "name": "短縮リンク作成",
-    "version": "1.3.1",
+    "version": "2.0",
     "manifest_version": 3,
-    "description": "短縮リンクを簡単に作成できます。カスタムリンクも使用可能。",
+    "description": "自作短縮リンクのChrome拡張 複数のURLをまとめて短縮できます",
     "icons": {
         "48": "icon3.png"
     },
@@ -22,5 +22,5 @@
         },
         "default_popup": "popup.html"
     },
-    "homepage_url": "https://twitter.com/_yakisugita_"
+    "homepage_url": "https://8jsv.com/"
 }
